@@ -25,6 +25,9 @@ namespace CleanCode._0.Naming
             var orders = new List<Order>();
             var people = new List<Person>(); // var persons would probably be fine too
             var schoolOfFish  = new List<Fish>(); //this name removes ambiguity
+            
+            // method/function names. use them in sentences. naming is actually super easy if you take time to train yourself
+            // if you can't use them in a sentence or using them in a sentence causes it to become complicated/confusing, then it is a bad name
         }
     }
 
