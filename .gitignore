@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+.vs
+debug.log
+*.rsuser
+.idea
+UpgradeLog*.htm
+node_modules
+/*.DotSettings
+npm-debug.log
+/docker/mssql/data
