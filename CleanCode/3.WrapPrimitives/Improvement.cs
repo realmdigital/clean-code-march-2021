@@ -1,12 +1,13 @@
 namespace CleanCode._3.WrapPrimitives
 {
-    public class Improvement
+    public class Improvement : IRunnable
     {
-        public void Main()
+        public void Run()
         {
             /*
             var emailAddress = new EmailAddress("realmdigital.co.za"); // will error
             var emailAddress = new EmailAddress(""); // will error
+            var emailAddress = new EmailAddress(); // would not compile
             */
            
             var emailAddress = new EmailAddress("sgordon@realmdigital.co.za");
@@ -18,7 +19,7 @@ namespace CleanCode._3.WrapPrimitives
         private void Login(EmailAddress emailAddress)
         {
             // recipientEmailAddress is guaranteed to hold an email address
-            // userClient.Login(emailAddress)
+            // userClient.Login(emailAddress.Value)
         }
 
         private void SendEmail(EmailAddress recipientEmailAddress)

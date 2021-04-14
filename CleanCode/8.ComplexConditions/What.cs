@@ -4,25 +4,25 @@ using System.Linq;
 
 namespace CleanCode._8.ComplexConditions
 {
-    // RATING: STRONGLY RECOMMENDED/ESSENTIAL - lets decide now
-    public class What
+    // RATING: STRONGLY RECOMMENDED/ESSENTIAL
+    public class What : IRunnable
     {
-        private readonly Item _item = new("Lord of Rings", "product") {Availability = "in_stock"};
+        private readonly Item _item = new("Lord of Rings", "product", "in_stock");
 
         private readonly List<Item> _items = new()
         {
-            new Item("Lord of Rings", "product") {Availability = "in_stock"},
-            new Item("What am I doing here?", "post") {Availability = "in_stock"}
+            new Item("Lord of Rings", "product", "in_stock"),
+            new Item("What am I doing here?", "post", "in_stock")
         };
 
-        public void Main()
+        public void Run()
         {
             // things start off with good intentions
             if (_item.Type == "product")
             {
                 //do something
             }
-
+    
             var productsForSale = _items.Where(x => x.Type == "product").ToList();
 
             Console.WriteLine($"There are {productsForSale.Count} products for sale");
@@ -64,8 +64,5 @@ namespace CleanCode._8.ComplexConditions
         }
     }
 
-    public record Item(string Name, string Type)
-    {
-        public string? Availability { get; init; }
-    }
+    public record Item(string Name, string Type, string Availability);
 }

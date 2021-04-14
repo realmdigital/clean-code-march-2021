@@ -3,7 +3,15 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <LangVersion>9</LangVersion>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
+        <OutputType>Exe</OutputType>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="FunctionReturnsConstant" />
+      <Folder Include="ManyParameters" />
+      <Folder Include="ReturnEarly" />
+      <Folder Include="SwallowingExceptions" />
+    </ItemGroup>
 
 </Project>

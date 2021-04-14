@@ -2,9 +2,9 @@ namespace CleanCode._3.WrapPrimitives
 {
     
     // RATING: EVALUATE
-    public class AsPerUsual
+    public class AsPerUsual : IRunnable
     {
-        public void Main()
+        public void Run()
         {
             var emailAddress = "realmdigital.co.za";
             Login(emailAddress);
@@ -19,8 +19,8 @@ namespace CleanCode._3.WrapPrimitives
         }
         private void SendEmail(string recipientEmailAddress)
         {
-            // do a bunch of stuff to prepare the email
             // probably need to validate the email address too
+            // do a bunch of stuff to prepare the email
             // emailClient.Send(recipientEmailAddress, data) //this now fails
         }
         

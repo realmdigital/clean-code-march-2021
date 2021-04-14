@@ -1,20 +1,34 @@
 using System;
 using System.Linq;
+using CleanCode._8.ComplexConditions;
 
 namespace CleanCode._7.CreateForIfAdd
 {
     // RATING: STRONGLY RECOMMENDED
-    public class WhyNotComeALittleClosure
+    public class WhyNotComeALittleClosure : IRunnable
     {
-        public void Main()
+        public void Run()
         {
             var numbers = new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
             
             // obviously if you haven't seen these before they might be confusing, but that's part of learning
+
+            var total = 0;
+            foreach (var number in numbers)
+            {
+                if (number % 2 == 0)
+                {
+                    total += number;
+                }
+            }
+            //withers
             
-            var total = numbers
-                .Where(number => number % 2 == 0)
+            total = numbers
+                .Where(x => x % 2 == 0)
+                .Select(x => x * 2)
                 .Aggregate(0, (accumulator, number) => accumulator + number);
+            
+            
             Console.WriteLine($"the total is {total}");
             
             // same thing but with built in .Sum() function

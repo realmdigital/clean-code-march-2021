@@ -1,15 +1,16 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CleanCode._5.OneDotPerLine
 {
     // RATING: STRONGLY RECOMMENDED
-    public class ConnectTheDots
+    public class ConnectTheDots 
     {
-        public void Main()
+        public void Run()
         {
-            var person = new Person("Bob");
-
+           var person = new Person("Bob", new (new Country("South Africa")));
+           
             // dont multi line for things that change types/context
             // adds additional load to figuring out what is what
             var countryName = person.Address.Country.Name;
@@ -33,9 +34,12 @@ namespace CleanCode._5.OneDotPerLine
 
             //linq is fine though
             var numbers = new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-            var evenNumbers = numbers.Where(IsEven).Select(MultiplyByTwo).ToList();
+            var evenNumbers = numbers
+                .Where(IsEven)
+                .Select(MultiplyByTwo)
+                .ToList();
         }
-
+        
         private int MultiplyByTwo(int number)
         {
             return number * 2;
@@ -46,10 +50,7 @@ namespace CleanCode._5.OneDotPerLine
             return number % 2 == 0;
         }
 
-        public record Person(string FirstName)
-        {
-            public Address Address { get; init; }
-        }
+        public record Person(string FirstName, Address Address);
 
         public record Address(Country Country);
 
